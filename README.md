@@ -1,2 +1,2 @@
-# cw
-CW exercises
+CW Exercises
+================
