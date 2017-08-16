@@ -1,2 +1,2 @@
-CW Exercises
+Coding Exercises
 ================
