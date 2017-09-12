@@ -3,7 +3,7 @@
 import array
 
 """
-implement classic stack data structure using python array library
+implement stack data structure with python array
 
 tests
 >>> s = Stack()

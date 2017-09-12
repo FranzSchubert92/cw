@@ -29,7 +29,7 @@ Negative numbers and duplicate numbers can and will appear.
 NOTE: There will also be lists tested of lengths upwards of 10,000,000 elements. 
 Be sure your code doesn't time out.
 
-tests
+>> DocTests >>
 >>> sum_pairs_hm([11, 3, 7, 5], 10)
 [3, 7]
 >>> sum_pairs_hm([1, 4, 8, 7, 3, 15], 8)
@@ -40,18 +40,18 @@ tests
 """
 
 def sum_pairs(ints, s):
+    """brute force version"""
     sz = len(ints)
     for i in range(sz):
         for j in range(i):
-            #if i != j:
+            if j < i:
                 if ints[i] + ints[j] == s:
                     return [ints[j], ints[i]]
 
 def sum_pairs_hm(ints, s):
-    sz = len(ints)
+    """using dict for memoization"""
     find_pair = {}
-    for i in range(sz):
-        val = ints[i]
+    for val in ints:
         pair = s - val
         if pair in find_pair:
             return [pair, val]
@@ -59,6 +59,7 @@ def sum_pairs_hm(ints, s):
             find_pair[val] = pair
 
 def sum_pairs_set(lst, s):
+    """using set for memoization"""
     cache = set()
     for i in lst:
         if s - i in cache:
